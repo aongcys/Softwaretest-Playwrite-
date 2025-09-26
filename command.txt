@@ -1,0 +1,3 @@
+run test command : npx playwright test
+Check test case : npx playwright show-report
+find code you use : npx playwright codegen
