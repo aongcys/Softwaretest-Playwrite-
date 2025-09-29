@@ -5,7 +5,6 @@ test('all user can see an menu', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await page.getByRole('list').getByRole('link', { name: 'Menu' }).click();
   await page.getByRole('heading', { name: 'Menu' }).click();
-
   await expect(page.getByRole('complementary')).toContainText('All', { timeout: 20000 });
 
   await page.waitForTimeout(5000);
@@ -28,4 +27,7 @@ test('all user can see an menu', async ({ page }) => {
   await expect(page.getByRole('complementary')).toContainText('Drink', { timeout: 20000 });
 
 });
+
+
+
 

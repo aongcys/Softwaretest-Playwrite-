@@ -55,7 +55,6 @@ test('register fail by invalid email pattern', async ({ page }) => {
   expect(isValid).toBeFalsy();
 
   const validationMessage = await emailInput.evaluate((el: HTMLInputElement) => el.validationMessage);
-  // console.log('Browser validation message:', validationMessage);
   expect(validationMessage).toContain("@");
 });
 
@@ -96,4 +95,5 @@ test('register fail by password', async ({ page }) => {
   await page.getByRole('button', { name: 'REGISTER' }).click();
   await expect(page.getByRole('paragraph')).toContainText('Firebase: Password should be at least 6 characters (auth/weak-password).');
 });
+
 
