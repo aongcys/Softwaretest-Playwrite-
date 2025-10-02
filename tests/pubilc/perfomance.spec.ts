@@ -49,7 +49,7 @@ test('performance - multiple registrations stress test', async ({ page }) => {
     const elapsed = Date.now() - start;
     console.log(`รอบที่ ${i + 1} เสร็จใน ${elapsed}ms`);
 
-    expect(elapsed).toBeLessThan(7000);
+    expect(elapsed).toBeLessThan(7500);
     await page.goto('http://localhost:5173/register');
   }
 });

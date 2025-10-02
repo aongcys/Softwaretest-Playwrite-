@@ -59,32 +59,32 @@ test('reserve fail by policy not accepted', async ({ page }) => {
   }
 });
 
-// test('reserve complete', async ({ page }) => {
-//   await page.goto('http://localhost:5173/');
-//   await page.getByRole('link', { name: 'Login' }).click();
-//   await page.getByRole('textbox', { name: 'Enter your registered email...' }).fill('test2@gmail.com');
-//   await page.getByRole('textbox', { name: 'Enter your registered password...' }).fill('tttttttt');
-//   await page.getByRole('button', { name: 'LOGIN' }).click();
+test('reserve complete', async ({ page }) => {
+  await page.goto('http://localhost:5173/');
+  await page.getByRole('link', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'Enter your registered email...' }).fill('test2@gmail.com');
+  await page.getByRole('textbox', { name: 'Enter your registered password...' }).fill('tttttttt');
+  await page.getByRole('button', { name: 'LOGIN' }).click();
 
-//   await page.getByRole('link', { name: 'Reserve now' }).click();
+  await page.getByRole('link', { name: 'Reserve now' }).click();
 
-//   await page.locator('.text-sm.cursor-pointer').first().click();
+  await page.locator('.text-sm.cursor-pointer').first().click();
 
-//   const seatsInput = page.getByRole('spinbutton');
-//   if (await seatsInput.count() >= 0) {
-//     await seatsInput.clear();
-//     await seatsInput.fill('1');
+  const seatsInput = page.getByRole('spinbutton');
+  if (await seatsInput.count() >= 0) {
+    await seatsInput.clear();
+    await seatsInput.fill('1');
 
-//     const policyCheckbox = page.getByRole('checkbox');
-//     await expect(policyCheckbox).toBeVisible();
-//     await policyCheckbox.check();
+    const policyCheckbox = page.getByRole('checkbox');
+    await expect(policyCheckbox).toBeVisible();
+    await policyCheckbox.check();
 
-//     const confirmBtn = page.getByRole('button', { name: 'CONFIRM' });
-//     await expect(confirmBtn).toBeEnabled();
-//     await confirmBtn.click();
-//   }
+    const confirmBtn = page.getByRole('button', { name: 'CONFIRM' });
+    await expect(confirmBtn).toBeEnabled();
+    await confirmBtn.click();
+  }
 
-//   const finishedHeading = page.locator('h2');
-//   await finishedHeading.waitFor({ state: 'visible', timeout: 10000 });
-//   await expect(finishedHeading).toContainText('Finished reserve');
-// });
+  const finishedHeading = page.locator('h2');
+  await finishedHeading.waitFor({ state: 'visible', timeout: 10000 });
+  await expect(finishedHeading).toContainText('Finished reserve');
+});

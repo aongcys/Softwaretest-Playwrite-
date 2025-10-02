@@ -10,3 +10,4 @@ test('login user should not see login button', async ({ page }) => {
   await page.waitForURL('http://localhost:5173/');
   await expect(page.getByRole('button', { name: 'Logout' })).toBeVisible();
 });
+

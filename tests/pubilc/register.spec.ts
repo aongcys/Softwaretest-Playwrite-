@@ -17,7 +17,6 @@ test('register pass', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
 });
 
-
 test('register fail by email already use', async ({ page }) => {
   await page.goto('http://localhost:5173/register');
   await page.getByRole('textbox', { name: 'Enter your firstname...' }).click();
